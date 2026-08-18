@@ -1,8 +1,15 @@
 import os
+import enum
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-THEME_OPTIONS = ["light", "dark"]
-AUTH_PROVIDER_OPTIONS = ["google", "facebook"]
+class THEME_OPTIONS(str, enum.Enum):
+    dark = "dark"
+    lite = "lite"
+
+class AUTH_PROVIDER_OPTIONS(str, enum.Enum):
+    google = "google",
+    facebook = "facebook"
+    credentials_provider = "cradentaials-provider"
 
 
 class Settings(BaseSettings):
